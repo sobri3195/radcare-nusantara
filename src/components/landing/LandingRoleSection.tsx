@@ -1,3 +1,10 @@
-import { BriefcaseMedical, ShieldPlus, Stethoscope, UserRound, UsersRound } from 'lucide-react';
-const roles=[['Pasien','Melihat jadwal, progress terapi, dan melaporkan gejala.',UserRound],['Dokter Spesialis','Mengevaluasi risiko, catatan klinis, dan progress pasien.',Stethoscope],['Fisikawan Medis','Memantau rencana terapi, sesi, dan catatan teknis.',BriefcaseMedical],['Admin Rumah Sakit','Mengelola pasien, jadwal, dokumen, dan operasional.',ShieldPlus],['Manajemen','Melihat analytics, performa layanan, dan laporan monitoring.',UsersRound]];
-export default function LandingRoleSection(){return <section className='mx-auto max-w-7xl px-4 py-16 md:px-6'><h2 className='text-center text-3xl font-bold text-slate-900'>Dirancang untuk seluruh ekosistem radioterapi</h2><div className='mt-8 grid gap-4 md:grid-cols-5'>{roles.map(([title,desc,Icon]:any)=><article key={title} className='rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg'><Icon className='mb-2 text-cyan-700'/><h3 className='font-semibold'>{title}</h3><p className='mt-1 text-sm text-slate-600'>{desc}</p></article>)}</div></section>}
+import { Building2, Stethoscope, User, UserCog, ShieldPlus } from 'lucide-react';
+
+const roles = [
+  { title: 'Pasien', icon: User, desc: 'Memantau progress terapi, Jadwal Terapi, dan Monitoring efek samping secara mudah.' },
+  { title: 'Dokter Spesialis', icon: Stethoscope, desc: 'Meninjau Risiko Klinis, Catatan Klinis, dan rekomendasi tindak lanjut pasien.' },
+  { title: 'Fisikawan Medis', icon: ShieldPlus, desc: 'Memonitor kepatuhan rencana dosis serta validasi alur teknis radioterapi.' },
+  { title: 'Admin Rumah Sakit', icon: UserCog, desc: 'Mengelola data operasional Demo Mode, jadwal, dan koordinasi lintas tim.' },
+  { title: 'Manajemen', icon: Building2, desc: 'Melihat dashboard KPI, insight operasional, serta kualitas layanan radioterapi.' },
+];
+export default function LandingRoleSection() {return <section className='section-wrap'><div className='section-head'><h2>Dirancang untuk seluruh ekosistem radioterapi</h2><p>Setiap peran mendapatkan tampilan Dashboard Klinis yang fokus, jelas, dan siap mendukung keputusan.</p></div><div className='grid gap-5 md:grid-cols-2 lg:grid-cols-5'>{roles.map(({title,icon:Icon,desc})=><article key={title} className='premium-card'><Icon className='h-9 w-9 text-cyan-600'/><h3>{title}</h3><p>{desc}</p></article>)}</div></section>}
