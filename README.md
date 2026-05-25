@@ -1,44 +1,67 @@
 # RADCARE NUSANTARA
 
-Prototype frontend-only healthtech radioterapi berbasis **React + Vite + TypeScript**.
+**Smart Radiotherapy Care, Continuous Specialist Monitoring.**
 
-## Fitur Demo Interaktif (localStorage)
-- Manajemen pasien demo: tambah pasien, ubah status, update progress terapi.
-- Detail pasien interaktif: monitoring note + doctor note timeline.
-- Jadwal radioterapi interaktif: ubah status jadwal, status `Selesai` otomatis menambah progress pasien.
-- Monitoring dashboard: ringkasan pasien risiko tinggi dan catatan monitoring harian.
-- Laporan interaktif: statistik dihitung dari data localStorage (bukan hardcoded) + export CSV/JSON.
-- Settings demo: pengaturan fasilitas, backup/restore JSON, reset data demo, audit log lokal.
-- Persistensi data: semua data disimpan pada key `radcare_nusantara_demo_data` dan tetap ada setelah refresh browser.
+RADCARE NUSANTARA adalah aplikasi dashboard healthcare SaaS berbasis frontend-only untuk simulasi operasional radioterapi: monitoring pasien, jadwal terapi, catatan klinis, laporan, dan audit log dengan penyimpanan lokal.
 
-## Stack
-React + Vite + TypeScript + Tailwind CSS + React Router DOM + lucide-react + localStorage.
+## Stack Teknologi
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- React Router DOM
+- lucide-react
+- localStorage
+- Vercel (SPA deployment)
+
+## Fitur Utama
+- Login demo berbasis role (Pasien, Dokter Spesialis, Fisikawan Medis, Admin, Manajemen).
+- Dashboard klinis dengan ringkasan pasien, jadwal, risiko, dan aktivitas.
+- CRUD lokal untuk pasien, monitoring, jadwal, treatment, catatan, dokumen, dan audit log.
+- Data table + tampilan card responsif untuk mobile.
+- AI Assistant lokal rule-based (tanpa API eksternal).
+- Export CSV per entitas dan backup/restore JSON aplikasi.
+- Persistensi data penuh di localStorage.
+
+## Struktur Data Demo
+Semua data disimpan ke localStorage key:
+
+`radcare_nusantara_app_data`
+
+Data bersifat **dummy** dan hanya untuk kebutuhan demo/prototype.
 
 ## Menjalankan Lokal
 ```bash
 npm install
 npm run dev
-npm run build
 ```
 
-## Rute Demo
-- `/`
-- `/demo`
-- `/demo/patients`
-- `/demo/patients/new`
-- `/demo/patients/:id`
-- `/demo/schedule`
-- `/demo/monitoring`
-- `/demo/reports`
-- `/demo/settings`
+Akses aplikasi di URL Vite yang muncul di terminal (default `http://localhost:5173`).
+
+## Build Produksi
+```bash
+npm run build
+npm run preview
+```
 
 ## Deploy ke Vercel
-1. Push repository ke Git provider.
+1. Push repository ke GitHub/GitLab/Bitbucket.
 2. Import project di Vercel.
-3. Framework preset: **Vite**.
-4. Build command: `npm run build`.
-5. Output directory: `dist`.
-6. Pastikan file `vercel.json` aktif agar SPA routing bekerja untuk semua route.
+3. Gunakan konfigurasi berikut:
+   - Framework Preset: **Vite**
+   - Install Command: `npm install`
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Pastikan file `vercel.json` aktif untuk SPA rewrite semua route.
 
-## Catatan
-Semua data bersifat dummy, tanpa backend/database/API eksternal, dan tidak menggunakan data pasien asli.
+## Backup / Restore Data
+- Buka halaman **Laporan** atau **Pengaturan**.
+- Gunakan fitur **Export JSON** untuk backup.
+- Gunakan **Import/Restore JSON** untuk pemulihan data.
+- Gunakan **Reset Data Demo** untuk kembali ke seed data awal.
+
+## Disclaimer
+- Aplikasi ini tidak menggunakan backend, database, atau API eksternal.
+- Aplikasi ini tidak menggunakan data pasien asli.
+- Seluruh isi klinis adalah data simulasi untuk demo UI/UX dan alur produk.
+- **AI Assistant hanya simulasi dan tidak menggantikan keputusan klinis.**
