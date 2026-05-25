@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom';
+export default function AIInsightCard({ text }: { text: string }) {return <section className='rounded-2xl border border-cyan-400/30 bg-slate-900 p-4 text-cyan-50 shadow-[0_0_30px_rgba(6,182,212,0.25)]'><p className='text-xs uppercase tracking-wide text-cyan-300'>AI Operational Insight</p><p className='mt-2 text-sm leading-relaxed'>{text}</p><Link to='/ai-assistant' className='mt-4 inline-flex min-h-11 items-center rounded-xl bg-cyan-500 px-4 text-xs font-semibold text-slate-900'>Buka AI Assistant</Link></section>}
