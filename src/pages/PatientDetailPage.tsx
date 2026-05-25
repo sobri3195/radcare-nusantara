@@ -1,0 +1,2 @@
+import { useParams } from 'react-router-dom';import { getRecordById } from '../lib/storage';
+export default function PatientDetailPage(){const {id=''}=useParams(); const p=getRecordById('patients',id); if(!p) return <div>Not found</div>; return <div className='rounded-2xl bg-white p-4 shadow'><h2 className='text-xl font-bold'>{p.name}</h2><pre className='text-sm'>{JSON.stringify(p,null,2)}</pre></div>}

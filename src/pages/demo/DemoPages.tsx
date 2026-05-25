@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { addDoctorNote, addMonitoringNote, addPatient, exportRadcareCSV, exportRadcareJSON, importRadcareJSON, loadRadcareDemoData, resetRadcareDemoData, updatePatientStatus, updateScheduleStatus, updateTreatmentProgress, type PatientStatus, type RiskLevel } from '../../lib/radcareStorage';
 
 const useData=()=>{const [data,setData]=useState(loadRadcareDemoData()); const refresh=()=>setData(loadRadcareDemoData()); return {data,refresh}};
-const Shell=({title,children}:{title:string;children:any})=><div className='min-h-screen bg-slate-50 p-4 pb-28'><div className='mx-auto max-w-4xl space-y-4'><h1 className='text-2xl font-bold text-slate-900'>{title}</h1>{children}</div></div>;
+const Shell=({title,children}:{title:string;children?:any})=><div className='min-h-screen bg-slate-50 p-4 pb-28'><div className='mx-auto max-w-4xl space-y-4'><h1 className='text-2xl font-bold text-slate-900'>{title}</h1>{children}</div></div>;
 const Toast=({msg}:{msg:string})=> msg?<div className='fixed right-4 top-4 rounded-xl bg-emerald-600 px-4 py-2 text-white'>{msg}</div>:null;
 
 export function DemoHome(){return <Shell title='RADCARE Demo'><div className='grid gap-2'>{['patients','schedule','monitoring','reports','settings'].map(x=><Link key={x} className='rounded-2xl bg-white p-4 shadow' to={`/demo/${x}`}>{x}</Link>)}</div></Shell>}

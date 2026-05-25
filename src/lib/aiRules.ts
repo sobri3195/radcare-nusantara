@@ -1,0 +1,2 @@
+import { loadAppData } from './storage';
+export const generateInsight=(q:string)=>{const d=loadAppData(); const high=d.patients.filter((p:any)=>p.riskLevel==='Tinggi').length; const delay=d.schedules.filter((s:any)=>s.status==='Ditunda').length; const severe=d.monitoringNotes.filter((n:any)=>String(n.severity).toLowerCase()==='berat').length; const unrev=d.monitoringNotes.filter((n:any)=>!n.reviewed).length; return `Insight: ${high} pasien risiko tinggi, ${delay} jadwal ditunda, ${severe} keluhan berat, ${unrev} catatan belum direview. Pertanyaan: ${q}`;};
