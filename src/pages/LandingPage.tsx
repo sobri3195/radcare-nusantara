@@ -11,4 +11,21 @@ import LandingRoleExperience from '../components/landing/LandingRoleExperience';
 import LandingRoleSection from '../components/landing/LandingRoleSection';
 import LandingWorkflow from '../components/landing/LandingWorkflow';
 
-export default function LandingPage(){return <div className='overflow-x-hidden bg-gradient-to-b from-slate-100 via-cyan-50 to-white'><LandingNavbar/><LandingHero/><LandingRoleSection/><LandingFeatures/><LandingWorkflow/><LandingDashboardPreview/><LandingAISection/><LandingRoleExperience/><LandingAnalytics/><LandingDemoNotice/><LandingCTA/><LandingFooter/></div>}
+export default function LandingPage() {
+  return (
+    <div className='overflow-x-hidden bg-gradient-to-b from-slate-100 via-cyan-50 to-white'>
+      <LandingNavbar />
+      <LandingHero />
+      <LandingRoleSection />
+      <LandingFeatures />
+      <LandingWorkflow />
+      <LandingDashboardPreview />
+      <LandingAISection />
+      <LandingRoleExperience />
+      <LandingAnalytics />
+      <LandingDemoNotice />
+      <LandingCTA />
+      <LandingFooter />
+    </div>
+  );
+}
