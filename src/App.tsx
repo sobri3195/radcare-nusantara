@@ -1,20 +1,17 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { LandingPage } from './components/landing/LandingPage';
-import { DemoHome, MonitoringPage, NewPatientPage, PatientDetailPage, PatientsPage, ReportsPage, SchedulePage, SettingsPage } from './pages/demo/DemoPages';
-
-export default function App() {
-  return (
-    <Routes>
-      <Route path='/' element={<LandingPage />} />
-      <Route path='/demo' element={<DemoHome />} />
-      <Route path='/demo/patients' element={<PatientsPage />} />
-      <Route path='/demo/patients/new' element={<NewPatientPage />} />
-      <Route path='/demo/patients/:id' element={<PatientDetailPage />} />
-      <Route path='/demo/schedule' element={<SchedulePage />} />
-      <Route path='/demo/monitoring' element={<MonitoringPage />} />
-      <Route path='/demo/reports' element={<ReportsPage />} />
-      <Route path='/demo/settings' element={<SettingsPage />} />
-      <Route path='*' element={<Navigate to='/' />} />
-    </Routes>
-  );
-}
+import AppLayout from './components/layout/AppLayout';
+import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
+import PatientsPage from './pages/PatientsPage';
+import PatientFormPage from './pages/PatientFormPage';
+import PatientDetailPage from './pages/PatientDetailPage';
+import SchedulePage from './pages/SchedulePage';
+import MonitoringPage from './pages/MonitoringPage';
+import TreatmentPage from './pages/TreatmentPage';
+import NotesPage from './pages/NotesPage';
+import AIAssistantPage from './pages/AIAssistantPage';
+import ReportsPage from './pages/ReportsPage';
+import DocumentsPage from './pages/DocumentsPage';
+import SettingsPage from './pages/SettingsPage';
+import AuditLogsPage from './pages/AuditLogsPage';
+export default function App(){return <Routes><Route path='/' element={<Navigate to='/login'/>}/><Route path='/login' element={<LoginPage/>}/><Route element={<AppLayout/>}><Route path='/dashboard' element={<DashboardPage/>}/><Route path='/patients' element={<PatientsPage/>}/><Route path='/patients/new' element={<PatientFormPage/>}/><Route path='/patients/:id' element={<PatientDetailPage/>}/><Route path='/patients/:id/edit' element={<PatientFormPage/>}/><Route path='/schedule' element={<SchedulePage/>}/><Route path='/monitoring' element={<MonitoringPage/>}/><Route path='/treatment' element={<TreatmentPage/>}/><Route path='/notes' element={<NotesPage/>}/><Route path='/ai-assistant' element={<AIAssistantPage/>}/><Route path='/reports' element={<ReportsPage/>}/><Route path='/documents' element={<DocumentsPage/>}/><Route path='/settings' element={<SettingsPage/>}/><Route path='/audit-logs' element={<AuditLogsPage/>}/></Route><Route path='*' element={<Navigate to='/login'/>}/></Routes>}
